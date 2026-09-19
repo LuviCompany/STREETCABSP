@@ -3,22 +3,25 @@ document.addEventListener("DOMContentLoaded", function () {
     lucide.createIcons();
   }
 
-  // Force the hero background video to autoplay muted/inline on mobile.
-  // Some mobile browsers ignore the autoplay attribute (or briefly show the
-  // native player) unless playback is also triggered via JS, with `muted`
-  // set as a property rather than just an attribute.
-  var heroVideo = document.getElementById("hero-video");
-  if (heroVideo) {
-    heroVideo.muted = true;
-    heroVideo.setAttribute("muted", "");
+  // Force the background videos (hero and contact section) to autoplay
+  // muted/inline on mobile. Some mobile browsers ignore the autoplay
+  // attribute (or briefly show the native player) unless playback is also
+  // triggered via JS, with `muted` set as a property rather than just an
+  // attribute.
+  ["hero-video", "contact-video"].forEach(function (id) {
+    var video = document.getElementById(id);
+    if (!video) return;
+
+    video.muted = true;
+    video.setAttribute("muted", "");
 
     var tryPlay = function () {
-      var playPromise = heroVideo.play();
+      var playPromise = video.play();
       if (playPromise && typeof playPromise.catch === "function") {
         playPromise.catch(function () {
           // Autoplay blocked until a user gesture; retry on first touch/click.
           var resume = function () {
-            heroVideo.play().catch(function () {});
+            video.play().catch(function () {});
             document.removeEventListener("touchstart", resume);
             document.removeEventListener("click", resume);
           };
@@ -28,12 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     };
 
-    if (heroVideo.readyState >= 2) {
+    if (video.readyState >= 2) {
       tryPlay();
     } else {
-      heroVideo.addEventListener("loadeddata", tryPlay, { once: true });
+      video.addEventListener("loadeddata", tryPlay, { once: true });
     }
-  }
+  });
 
   var menuBtn = document.getElementById("menu-btn");
   var mobileMenu = document.getElementById("mobile-menu");
