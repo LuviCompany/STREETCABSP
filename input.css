@@ -51,7 +51,33 @@ html {
   transform: translateY(0);
 }
 
+/* Light sweep along the top edge of the contact form */
+@keyframes form-shine {
+  0%,
+  15% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  30%,
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(400%);
+    opacity: 0;
+  }
+}
+
+.form-shine {
+  animation: form-shine 7s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .form-shine {
+    animation: none;
+    opacity: 0;
+  }
+
   .reveal {
     opacity: 1;
     transform: none;

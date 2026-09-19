@@ -61,3 +61,4 @@ O `tailwind.config.js` aponta `content` para `./index.html` — se novos arquivo
 - Repositório: [github.com/LuviCompany/STREETCABSP](https://github.com/LuviCompany/STREETCABSP) (renomeado de `STREETCAB`; o remote local já aponta para o novo nome)
 - Hospedagem: Vercel, projeto estático (sem framework preset, sem build command)
 - `vercel.json` define cache-control para `images/`, `logos/`, `videos/`, `css/`, `js/` (1 semana com stale-while-revalidate) — o HTML fica sem cache agressivo para não atrasar propagação de conteúdo novo
+- **Cache-busting:** `css/styles.css` e `js/main.js` têm cache de 1 dia no navegador e são referenciados no `index.html` com `?v=AAAAMMDD`. Sempre que recompilar o CSS ou mudar o JS, atualizar esse número nos dois links — senão quem já visitou o site continua vendo o CSS/JS antigo (foi o que quebrou o formulário no celular/desktop do cliente após o deploy da seção de contato).

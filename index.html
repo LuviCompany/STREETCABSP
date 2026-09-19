@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/styles.css?v=20260919b" />
 </head>
 <body class="font-sans antialiased">
 
@@ -387,7 +387,9 @@
     </div>
 
     <form id="contact-form" class="reveal relative flex flex-col overflow-hidden rounded-2xl border border-white/15 bg-white/[0.07] p-6 shadow-2xl shadow-black/30 ring-1 ring-inset ring-white/10 backdrop-blur-xl sm:p-8">
-      <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-accent-light to-metal"></div>
+      <div class="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-accent-light/20 to-transparent" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-accent-light to-transparent" aria-hidden="true"></div>
+      <div class="form-shine pointer-events-none absolute left-0 top-0 h-[2px] w-1/4 bg-gradient-to-r from-transparent via-white to-transparent" aria-hidden="true"></div>
       <div class="grid flex-1 grid-cols-1 gap-4 sm:grid-cols-2 sm:grid-rows-[auto_auto_1fr]">
         <div class="group relative sm:col-span-1">
           <label for="nome" class="sr-only">Nome completo</label>
@@ -512,6 +514,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
-<script src="js/main.js"></script>
+<script src="js/main.js?v=20260919b"></script>
 </body>
 </html>
