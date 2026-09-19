@@ -15,7 +15,8 @@ index.html          página única, todas as seções por âncora (#inicio, #ser
 css/styles.css       CSS compilado do Tailwind (gerado — não editar direto)
 input.css            fonte do Tailwind (editar aqui, depois recompilar)
 tailwind.config.js   tokens de cor/fonte do projeto
-js/main.js           menu mobile, formulário → WhatsApp, scroll-reveal, contador animado
+js/main.js           menu mobile, formulário → WhatsApp (+ e-mail via enviar.php), scroll-reveal, contador animado
+enviar.php           recebe o formulário e envia e-mail para contato@streetcab.com.br (só roda na Hostinger/PHP)
 images/, logos/, videos/   assets do site
 ```
 
@@ -57,6 +58,9 @@ O `tailwind.config.js` aponta `content` para `./index.html` — se novos arquivo
 - Mensagens de commit em inglês, curtas, explicando o "porquê".
 
 ## Deploy
+
+- **Hospedagem oficial: Hostinger** (`public_html`). A Vercel foi só o ambiente de testes/preview. O `enviar.php` só executa em servidor com PHP — na Vercel o formulário segue funcionando pelo WhatsApp, mas sem o e-mail.
+- **Formulário → e-mail:** `js/main.js` faz `POST` para `enviar.php` (fire-and-forget, com honeypot `website`) e abre o WhatsApp em seguida; o WhatsApp continua sendo o canal principal e abre mesmo se o e-mail falhar. Destino/remetente ficam nas constantes no topo do `enviar.php` (o remetente precisa ser do domínio para não cair no spam). Não dá para testar o envio localmente (sem PHP) — validar no site da Hostinger.
 
 - Repositório: [github.com/LuviCompany/STREETCABSP](https://github.com/LuviCompany/STREETCABSP) (renomeado de `STREETCAB`; o remote local já aponta para o novo nome)
 - Hospedagem: Vercel, projeto estático (sem framework preset, sem build command)

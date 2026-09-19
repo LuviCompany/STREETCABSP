@@ -86,6 +86,29 @@ document.addEventListener("DOMContentLoaded", function () {
       var url =
         "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
 
+      // Hidden honeypot field: humans leave it empty, bots fill it.
+      if (form.website && form.website.value) return;
+
+      // E-mail copy for the team (handled by enviar.php on the Hostinger).
+      // Fire-and-forget: WhatsApp is the main channel and must open even if
+      // the e-mail request fails or the host has no PHP (e.g. local preview).
+      try {
+        fetch("enviar.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({
+            nome: nome,
+            empresa: empresa,
+            whatsapp: whatsapp,
+            email: email,
+            mensagem: mensagem,
+            website: "",
+          }).toString(),
+          keepalive: true,
+        }).catch(function () {});
+      } catch (err) {}
+
+      // Opened synchronously in the click handler so popup blockers allow it.
       window.open(url, "_blank", "noopener,noreferrer");
       form.reset();
     });
