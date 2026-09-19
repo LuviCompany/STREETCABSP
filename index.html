@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Streetcab | Cabeamento Estruturado e Infraestrutura de Rede</title>
+<meta name="description" content="Soluções completas em infraestrutura de rede para provedores e empresas. Qualidade técnica, atendimento humanizado e agilidade na entrega de projetos que conectam o seu negócio." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="font-sans antialiased">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 border-b border-white/10 bg-navy-darker/95 backdrop-blur">
+  <div class="mx-auto flex max-w-container items-center justify-between gap-4 px-5 py-5 sm:px-8 sm:py-6">
+    <a href="#inicio" class="flex items-center gap-2 shrink-0">
+      <img src="images/logo-streetcab.png" alt="Streetcab" class="h-12 w-auto sm:h-14" />
+    </a>
+
+    <nav class="hidden items-center gap-8 lg:flex">
+      <a href="#inicio" class="text-sm font-medium text-white/80 transition-colors hover:text-white">Início</a>
+      <a href="#servicos" class="text-sm font-medium text-white/80 transition-colors hover:text-white">Serviços</a>
+      <a href="#portfolio" class="text-sm font-medium text-white/80 transition-colors hover:text-white">Portfólio</a>
+      <a href="#diferenciais" class="text-sm font-medium text-white/80 transition-colors hover:text-white">Diferenciais</a>
+      <a href="#sobre" class="text-sm font-medium text-white/80 transition-colors hover:text-white">Sobre</a>
+      <a href="#contato" class="text-sm font-medium text-white/80 transition-colors hover:text-white">Contato</a>
+    </nav>
+
+    <a href="https://wa.me/5511965937180?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer"
+      class="hidden items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-light lg:inline-flex">
+      <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12.001 2c-5.523 0-10 4.477-10 10 0 1.77.464 3.484 1.34 4.988L2 22l5.144-1.351A9.958 9.958 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12.001 2zm0 18.09a8.05 8.05 0 0 1-4.108-1.13l-.294-.174-3.055.802.815-2.978-.192-.306A8.05 8.05 0 0 1 3.91 12c0-4.464 3.626-8.09 8.09-8.09 4.464 0 8.09 3.626 8.09 8.09 0 4.464-3.626 8.09-8.09 8.09z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+      Falar no WhatsApp
+    </a>
+
+    <button id="menu-btn" class="inline-flex items-center justify-center rounded-lg border border-white/15 p-2 text-white lg:hidden" aria-label="Abrir menu">
+      <i data-lucide="menu" class="h-5 w-5"></i>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden border-t border-white/10 bg-navy-darker lg:hidden">
+    <nav class="flex flex-col gap-1 px-5 py-4">
+      <a href="#inicio" class="mobile-link rounded-md px-3 py-2.5 text-sm font-medium text-white/80 hover:bg-white/5 hover:text-white">Início</a>
+      <a href="#servicos" class="mobile-link rounded-md px-3 py-2.5 text-sm font-medium text-white/80 hover:bg-white/5 hover:text-white">Serviços</a>
+      <a href="#portfolio" class="mobile-link rounded-md px-3 py-2.5 text-sm font-medium text-white/80 hover:bg-white/5 hover:text-white">Portfólio</a>
+      <a href="#diferenciais" class="mobile-link rounded-md px-3 py-2.5 text-sm font-medium text-white/80 hover:bg-white/5 hover:text-white">Diferenciais</a>
+      <a href="#sobre" class="mobile-link rounded-md px-3 py-2.5 text-sm font-medium text-white/80 hover:bg-white/5 hover:text-white">Sobre</a>
+      <a href="#contato" class="mobile-link rounded-md px-3 py-2.5 text-sm font-medium text-white/80 hover:bg-white/5 hover:text-white">Contato</a>
+      <a href="https://wa.me/5511965937180?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer"
+        class="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12.001 2c-5.523 0-10 4.477-10 10 0 1.77.464 3.484 1.34 4.988L2 22l5.144-1.351A9.958 9.958 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12.001 2zm0 18.09a8.05 8.05 0 0 1-4.108-1.13l-.294-.174-3.055.802.815-2.978-.192-.306A8.05 8.05 0 0 1 3.91 12c0-4.464 3.626-8.09 8.09-8.09 4.464 0 8.09 3.626 8.09 8.09 0 4.464-3.626 8.09-8.09 8.09z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section id="inicio" class="relative overflow-hidden bg-navy-deep">
+  <div class="absolute inset-0">
+    <video autoplay muted loop playsinline poster="images/banner-principal.png"
+      class="h-full w-full object-cover object-right opacity-90 lg:opacity-100">
+      <source src="videos/banner-principal.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy-deep/10"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-navy-deep/30"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-container px-5 py-16 sm:px-8 sm:py-20 lg:py-28">
+    <div class="max-w-2xl">
+      <p class="section-eyebrow reveal">CABEAMENTO ESTRUTURADO &amp; TELECOM</p>
+      <h1 class="reveal mt-4 font-heading text-4xl font-bold leading-[1.1] text-white sm:text-5xl lg:text-[3.25rem]">
+        Soluções completas em infraestrutura de rede para provedores e empresas.
+      </h1>
+      <p class="reveal mt-5 max-w-xl text-base text-white/70 sm:text-lg">
+        Qualidade técnica, atendimento humanizado e agilidade na entrega de projetos que conectam o seu negócio.
+      </p>
+
+      <div class="reveal mt-8 flex flex-col gap-3 sm:flex-row">
+        <a href="https://wa.me/5511965937180?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Solicitar orçamento
+          <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12.001 2c-5.523 0-10 4.477-10 10 0 1.77.464 3.484 1.34 4.988L2 22l5.144-1.351A9.958 9.958 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12.001 2zm0 18.09a8.05 8.05 0 0 1-4.108-1.13l-.294-.174-3.055.802.815-2.978-.192-.306A8.05 8.05 0 0 1 3.91 12c0-4.464 3.626-8.09 8.09-8.09 4.464 0 8.09 3.626 8.09 8.09 0 4.464-3.626 8.09-8.09 8.09z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+        </a>
+        <a href="#servicos" class="btn-outline-dark">Nossos serviços ↓</a>
+      </div>
+
+      <div class="reveal mt-12 grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4 lg:grid-cols-4">
+        <div class="flex items-start gap-3">
+          <span class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10 text-accent-light">
+            <i data-lucide="users" class="h-[18px] w-[18px]"></i>
+          </span>
+          <span class="text-sm font-medium text-white/85">Equipe especializada e qualificada</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10 text-accent-light">
+            <i data-lucide="headset" class="h-[18px] w-[18px]"></i>
+          </span>
+          <span class="text-sm font-medium text-white/85">Atendimento humanizado</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10 text-accent-light">
+            <i data-lucide="zap" class="h-[18px] w-[18px]"></i>
+          </span>
+          <span class="text-sm font-medium text-white/85">Agilidade na entrega de projetos</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10 text-accent-light">
+            <i data-lucide="heart-handshake" class="h-[18px] w-[18px]"></i>
+          </span>
+          <span class="text-sm font-medium text-white/85">Compromisso com a satisfação</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS STRIP -->
+<section class="border-b border-navy/10 bg-white py-10">
+  <div class="mx-auto max-w-container px-5 sm:px-8">
+    <p class="section-eyebrow text-center sm:text-left">EMPRESAS QUE CONFIAM NA STREETCAB</p>
+    <div class="reveal mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:justify-between">
+      <img src="logos/vivo.png" alt="Vivo" class="h-8 w-auto object-contain sm:h-10" />
+      <img src="logos/claro.png" alt="Claro" class="h-8 w-auto object-contain sm:h-10" />
+      <img src="logos/tim.png" alt="Tim" class="h-8 w-auto object-contain sm:h-10" />
+      <img src="logos/net.png" alt="Net" class="h-8 w-auto object-contain sm:h-10" />
+      <img src="logos/brisanet.png" alt="Brisanet" class="h-8 w-auto object-contain sm:h-10" />
+      <img src="logos/azza.png" alt="Azza" class="h-8 w-auto object-contain sm:h-10" />
+      <img src="logos/op-telecom.png" alt="OP Telecom" class="h-8 w-auto object-contain sm:h-10" />
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicos" class="bg-white py-20 sm:py-24">
+  <div class="mx-auto max-w-container px-5 sm:px-8">
+    <div class="text-center">
+      <p class="section-eyebrow">NOSSOS SERVIÇOS</p>
+      <h2 class="mt-3 font-heading text-3xl font-bold text-navy sm:text-4xl">Soluções completas para sua rede</h2>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+      <div class="reveal group rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110"><i data-lucide="cable" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-navy">Cabeamento Estruturado</h3>
+        <p class="mt-2 text-sm leading-relaxed text-navy/60">Projetos e execução de cabeamento estruturado com organização, qualidade e padrão técnico.</p>
+      </div>
+
+      <div class="reveal group rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110"><i data-lucide="network" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-navy">Instalação FTTH</h3>
+        <p class="mt-2 text-sm leading-relaxed text-navy/60">Instalação completa de redes ópticas FTTH com fusão, testes e certificação.</p>
+      </div>
+
+      <div class="reveal group rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110"><i data-lucide="waypoints" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-navy">Projeto de Rede FTTX/FTTH</h3>
+        <p class="mt-2 text-sm leading-relaxed text-navy/60">Desenvolvimento de projetos ópticos com assinatura de ART e memorial descritivo.</p>
+      </div>
+
+      <div class="reveal group rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110"><i data-lucide="home" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-navy">Cabeamento Residencial</h3>
+        <p class="mt-2 text-sm leading-relaxed text-navy/60">Instalação de redes residenciais com qualidade e acabamento profissional.</p>
+      </div>
+
+      <div class="reveal group rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110"><i data-lucide="plug" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-navy">Instalação de Equipamentos</h3>
+        <p class="mt-2 text-sm leading-relaxed text-navy/60">Instalação de modems, roteadores, switches, repetidores e demais equipamentos de rede.</p>
+      </div>
+
+      <div class="reveal group rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110"><i data-lucide="server" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-navy">Montagem de Rack</h3>
+        <p class="mt-2 text-sm leading-relaxed text-navy/60">Montagem e acomodação de racks com organização, identificação e padrão.</p>
+      </div>
+
+      <div class="reveal group rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110"><i data-lucide="camera" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-navy">Cabeamento CFTV</h3>
+        <p class="mt-2 text-sm leading-relaxed text-navy/60">Cabeamento dedicado para sistemas de CFTV com infraestrutura segura.</p>
+      </div>
+
+      <div class="reveal group rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110"><i data-lucide="shield-check" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-navy">Infraestrutura CFTV</h3>
+        <p class="mt-2 text-sm leading-relaxed text-navy/60">Infraestrutura completa para sistemas de câmeras e monitoramento.</p>
+      </div>
+
+      <div class="reveal group rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110"><i data-lucide="antenna" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-navy">Configuração de Antenas</h3>
+        <p class="mt-2 text-sm leading-relaxed text-navy/60">Configuração de antenas 2.4GHz e 5.8GHz com otimização de sinal.</p>
+      </div>
+
+      <div class="reveal group rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110"><i data-lucide="workflow" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-navy">Redes Aéreas e Subterrâneas</h3>
+        <p class="mt-2 text-sm leading-relaxed text-navy/60">Execução de redes ópticas aéreas e subterrâneas com materiais de alta qualidade.</p>
+      </div>
+
+      <div class="reveal group rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110"><i data-lucide="wrench" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-navy">Manutenção e Suporte</h3>
+        <p class="mt-2 text-sm leading-relaxed text-navy/60">Suporte técnico e manutenção preventiva e corretiva de redes e equipamentos.</p>
+      </div>
+
+      <div class="reveal group rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110"><i data-lucide="layout-grid" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-navy">Infraestrutura Completa</h3>
+        <p class="mt-2 text-sm leading-relaxed text-navy/60">Soluções completas em telecom, do projeto à execução final.</p>
+      </div>
+
+    </div>
+
+    <div class="mt-12 flex justify-center">
+      <a href="https://wa.me/5511965937180?text=Ol%C3%A1!%20Gostaria%20de%20ver%20todos%20os%20servi%C3%A7os%20da%20Streetcab." target="_blank" rel="noopener noreferrer" class="btn-primary">
+        Ver todos os serviços
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section id="diferenciais" class="bg-white px-5 py-6 sm:px-8">
+  <div class="mx-auto max-w-container rounded-[28px] bg-navy-deep px-6 py-14 sm:px-10 sm:py-16">
+    <div class="text-center">
+      <p class="section-eyebrow">POR QUE ESCOLHER A STREETCAB?</p>
+      <h2 class="mt-3 font-heading text-3xl font-bold text-white sm:text-4xl">Diferenciais que fazem a diferença</h2>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="reveal flex flex-col items-start">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-accent-light"><i data-lucide="shield-check" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-white">Qualificação técnica</h3>
+        <p class="mt-2 text-sm leading-relaxed text-white/60">Equipe treinada e certificada para entregar o melhor em cada projeto.</p>
+      </div>
+      <div class="reveal flex flex-col items-start">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-accent-light"><i data-lucide="headset" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-white">Atendimento humanizado</h3>
+        <p class="mt-2 text-sm leading-relaxed text-white/60">Foco no relacionamento e na satisfação real do cliente.</p>
+      </div>
+      <div class="reveal flex flex-col items-start">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-accent-light"><i data-lucide="heart-handshake" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-white">Compromisso com o cliente</h3>
+        <p class="mt-2 text-sm leading-relaxed text-white/60">Transparência, confiança e responsabilidade em todas as etapas.</p>
+      </div>
+      <div class="reveal flex flex-col items-start">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-accent-light"><i data-lucide="zap" class="h-[22px] w-[22px]"></i></span>
+        <h3 class="mt-4 font-heading text-base font-semibold text-white">Agilidade na entrega</h3>
+        <p class="mt-2 text-sm leading-relaxed text-white/60">Processos eficientes para entregar mais qualidade em menos tempo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="bg-white py-20 sm:py-24">
+  <div class="mx-auto max-w-container px-5 sm:px-8">
+    <div class="text-center">
+      <p class="section-eyebrow">NOSSOS PROJETOS</p>
+      <h2 class="mt-3 font-heading text-3xl font-bold text-navy sm:text-4xl">Alguns projetos realizados</h2>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <figure class="reveal group overflow-hidden rounded-2xl border border-navy/10">
+        <div class="relative aspect-[4/3] w-full overflow-hidden">
+          <img src="images/cabeamento-estruturado.png" alt="Cabeamento Estruturado" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+        </div>
+        <figcaption class="px-4 py-3 text-sm font-semibold text-navy">Cabeamento Estruturado</figcaption>
+      </figure>
+      <figure class="reveal group overflow-hidden rounded-2xl border border-navy/10">
+        <div class="relative aspect-[4/3] w-full overflow-hidden">
+          <img src="images/instalacao-ftth.png" alt="Instalação FTTH" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+        </div>
+        <figcaption class="px-4 py-3 text-sm font-semibold text-navy">Instalação FTTH</figcaption>
+      </figure>
+      <figure class="reveal group overflow-hidden rounded-2xl border border-navy/10">
+        <div class="relative aspect-[4/3] w-full overflow-hidden">
+          <img src="images/montagem-rack.png" alt="Montagem de Rack" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+        </div>
+        <figcaption class="px-4 py-3 text-sm font-semibold text-navy">Montagem de Rack</figcaption>
+      </figure>
+      <figure class="reveal group overflow-hidden rounded-2xl border border-navy/10">
+        <div class="relative aspect-[4/3] w-full overflow-hidden">
+          <img src="images/infraestrutura-cftv.png" alt="Infraestrutura CFTV" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+        </div>
+        <figcaption class="px-4 py-3 text-sm font-semibold text-navy">Infraestrutura CFTV</figcaption>
+      </figure>
+    </div>
+
+    <div class="mt-12 flex justify-center">
+      <a href="https://wa.me/5511965937180?text=Ol%C3%A1!%20Gostaria%20de%20ver%20mais%20projetos%20realizados%20pela%20Streetcab." target="_blank" rel="noopener noreferrer" class="btn-outline-light">
+        Ver mais projetos
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS / SOBRE -->
+<section id="sobre">
+  <div class="bg-white py-16 sm:py-20">
+    <div class="mx-auto max-w-container px-5 sm:px-8">
+      <div id="numbers-grid" class="grid grid-cols-1 gap-y-10 gap-x-8 sm:grid-cols-2 lg:grid-cols-5">
+        <div class="reveal flex items-center justify-center gap-4">
+          <span class="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent"><i data-lucide="building-2" class="h-8 w-8"></i></span>
+          <div class="flex flex-col">
+            <span class="font-heading text-2xl font-bold text-navy count-up" data-target="5" data-prefix="+">+0</span>
+            <span class="text-sm font-semibold text-navy/70">Anos de mercado</span>
+          </div>
+        </div>
+        <div class="reveal flex items-center justify-center gap-4">
+          <span class="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent"><i data-lucide="cog" class="h-8 w-8"></i></span>
+          <div class="flex flex-col">
+            <span class="font-heading text-2xl font-bold text-navy count-up" data-target="6" data-prefix="+">+0</span>
+            <span class="text-sm font-semibold text-navy/70">Projetos de rede óptica para provedores</span>
+          </div>
+        </div>
+        <div class="reveal flex items-center justify-center gap-4">
+          <span class="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent"><i data-lucide="star" class="h-8 w-8"></i></span>
+          <div class="flex flex-col">
+            <span class="font-heading text-2xl font-bold text-navy count-up" data-target="100" data-suffix="%">0%</span>
+            <span class="text-sm font-semibold text-navy/70">Compromisso com a qualidade</span>
+          </div>
+        </div>
+        <div class="reveal flex items-center justify-center gap-4">
+          <span class="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent"><i data-lucide="user-check" class="h-8 w-8"></i></span>
+          <div class="flex flex-col">
+            <span class="text-sm font-semibold text-navy/70">Profissionais Especializados</span>
+          </div>
+        </div>
+        <div class="reveal flex items-center justify-center gap-4">
+          <span class="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent"><i data-lucide="globe-2" class="h-8 w-8"></i></span>
+          <div class="flex flex-col">
+            <span class="text-sm font-semibold text-navy/70">Atendimento em todo o Brasil</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contato" class="bg-slate-50 py-20 sm:py-24">
+  <div class="mx-auto grid max-w-container gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:items-start">
+    <div>
+      <p class="section-eyebrow reveal">VAMOS CONVERSAR?</p>
+      <h2 class="reveal mt-3 font-heading text-3xl font-bold text-navy sm:text-4xl">Solicite um orçamento sem compromisso</h2>
+      <p class="reveal mt-4 max-w-md text-base text-navy/60">
+        Preencha o formulário ao lado e fale com nossa equipe pelo WhatsApp. Resposta rápida e atendimento personalizado para o seu projeto.
+      </p>
+
+      <div class="reveal mt-8 flex flex-col gap-4">
+        <a href="https://wa.me/5511965937180" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-navy hover:text-accent">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent"><i data-lucide="phone" class="h-[18px] w-[18px]"></i></span>
+          <span class="font-medium">(11) 96593-7180</span>
+        </a>
+        <a href="mailto:contato@streetcabsp.com.br" class="flex items-center gap-3 text-navy hover:text-accent">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent"><i data-lucide="mail" class="h-[18px] w-[18px]"></i></span>
+          <span class="font-medium">contato@streetcabsp.com.br</span>
+        </a>
+      </div>
+    </div>
+
+    <form id="contact-form" class="reveal rounded-2xl border border-navy/10 bg-white p-6 shadow-sm sm:p-8">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div class="sm:col-span-1">
+          <label for="nome" class="sr-only">Nome completo</label>
+          <input id="nome" name="nome" type="text" required placeholder="Nome completo*"
+            class="w-full rounded-lg border border-navy/15 px-4 py-3 text-sm text-navy placeholder:text-navy/40 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
+        </div>
+        <div class="sm:col-span-1">
+          <label for="empresa" class="sr-only">Empresa</label>
+          <input id="empresa" name="empresa" type="text" required placeholder="Empresa*"
+            class="w-full rounded-lg border border-navy/15 px-4 py-3 text-sm text-navy placeholder:text-navy/40 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
+        </div>
+        <div class="sm:col-span-1">
+          <label for="whatsapp" class="sr-only">WhatsApp</label>
+          <input id="whatsapp" name="whatsapp" type="tel" required placeholder="WhatsApp*"
+            class="w-full rounded-lg border border-navy/15 px-4 py-3 text-sm text-navy placeholder:text-navy/40 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
+        </div>
+        <div class="sm:col-span-1">
+          <label for="email" class="sr-only">E-mail</label>
+          <input id="email" name="email" type="email" required placeholder="E-mail*"
+            class="w-full rounded-lg border border-navy/15 px-4 py-3 text-sm text-navy placeholder:text-navy/40 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
+        </div>
+        <div class="sm:col-span-2">
+          <label for="mensagem" class="sr-only">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" required rows="5" placeholder="Mensagem*"
+            class="w-full resize-none rounded-lg border border-navy/15 px-4 py-3 text-sm text-navy placeholder:text-navy/40 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary mt-6 w-full">
+        Enviar mensagem
+        <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12.001 2c-5.523 0-10 4.477-10 10 0 1.77.464 3.484 1.34 4.988L2 22l5.144-1.351A9.958 9.958 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12.001 2zm0 18.09a8.05 8.05 0 0 1-4.108-1.13l-.294-.174-3.055.802.815-2.978-.192-.306A8.05 8.05 0 0 1 3.91 12c0-4.464 3.626-8.09 8.09-8.09 4.464 0 8.09 3.626 8.09 8.09 0 4.464-3.626 8.09-8.09 8.09z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+      </button>
+      <p class="mt-3 text-center text-xs text-navy/50">Você será redirecionado para o WhatsApp</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-navy-darker pt-16 text-white/70">
+  <div class="mx-auto max-w-container px-5 sm:px-8">
+    <div class="grid grid-cols-1 gap-10 border-b border-white/10 pb-12 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <img src="images/logo-streetcab.png" alt="Streetcab" class="h-9 w-auto" />
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-white/50">
+          Soluções completas em infraestrutura de rede para provedores e empresas de telecomunicações.
+        </p>
+        <div class="mt-5 flex items-center gap-3">
+          <a href="https://instagram.com/streetcabsp" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-accent">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+          </a>
+          <a href="https://wa.me/5511965937180" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-accent">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12.001 2c-5.523 0-10 4.477-10 10 0 1.77.464 3.484 1.34 4.988L2 22l5.144-1.351A9.958 9.958 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12.001 2zm0 18.09a8.05 8.05 0 0 1-4.108-1.13l-.294-.174-3.055.802.815-2.978-.192-.306A8.05 8.05 0 0 1 3.91 12c0-4.464 3.626-8.09 8.09-8.09 4.464 0 8.09 3.626 8.09 8.09 0 4.464-3.626 8.09-8.09 8.09z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+          </a>
+          <a href="mailto:contato@streetcabsp.com.br" aria-label="E-mail"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-accent">
+            <i data-lucide="mail" class="h-4 w-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-heading text-sm font-semibold uppercase tracking-wide text-white">Navegação</h3>
+        <ul class="mt-4 flex flex-col gap-3">
+          <li><a href="#inicio" class="text-sm text-white/60 hover:text-white">Início</a></li>
+          <li><a href="#servicos" class="text-sm text-white/60 hover:text-white">Serviços</a></li>
+          <li><a href="#portfolio" class="text-sm text-white/60 hover:text-white">Portfólio</a></li>
+          <li><a href="#diferenciais" class="text-sm text-white/60 hover:text-white">Diferenciais</a></li>
+          <li><a href="#sobre" class="text-sm text-white/60 hover:text-white">Sobre</a></li>
+          <li><a href="#contato" class="text-sm text-white/60 hover:text-white">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-heading text-sm font-semibold uppercase tracking-wide text-white">Serviços</h3>
+        <ul class="mt-4 flex flex-col gap-3">
+          <li><a href="#servicos" class="text-sm text-white/60 hover:text-white">Cabeamento Estruturado</a></li>
+          <li><a href="#servicos" class="text-sm text-white/60 hover:text-white">Instalação FTTH</a></li>
+          <li><a href="#servicos" class="text-sm text-white/60 hover:text-white">Projetos FTTX/FTTH</a></li>
+          <li><a href="#servicos" class="text-sm text-white/60 hover:text-white">CFTV e Infraestrutura</a></li>
+          <li><a href="#servicos" class="text-sm text-white/60 hover:text-white">Redes e Equipamentos</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-heading text-sm font-semibold uppercase tracking-wide text-white">Contato</h3>
+        <ul class="mt-4 flex flex-col gap-3 text-sm text-white/60">
+          <li class="flex items-center gap-2"><svg viewBox="0 0 24 24" fill="currentColor" class="h-[15px] w-[15px] text-accent-light"><path d="M12.001 2c-5.523 0-10 4.477-10 10 0 1.77.464 3.484 1.34 4.988L2 22l5.144-1.351A9.958 9.958 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12.001 2zm0 18.09a8.05 8.05 0 0 1-4.108-1.13l-.294-.174-3.055.802.815-2.978-.192-.306A8.05 8.05 0 0 1 3.91 12c0-4.464 3.626-8.09 8.09-8.09 4.464 0 8.09 3.626 8.09 8.09 0 4.464-3.626 8.09-8.09 8.09z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>(11) 96593-7180</li>
+          <li class="flex items-center gap-2"><i data-lucide="mail" class="h-[15px] w-[15px] text-accent-light"></i>contato@streetcabsp.com.br</li>
+          <li class="flex items-center gap-2"><i data-lucide="map-pin" class="h-[15px] w-[15px] text-accent-light"></i>São Paulo - SP</li>
+          <li class="flex items-center gap-2"><i data-lucide="clock" class="h-[15px] w-[15px] text-accent-light"></i>09h às 18h</li>
+          <li class="pt-1 text-white/40">@streetcabsp</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-between gap-2 py-6 text-xs text-white/40 sm:flex-row">
+      <p>© 2024 Streetcab. Todos os direitos reservados.</p>
+      <p>Desenvolvido por <a href="#" class="text-white/60 hover:text-white">Luvi Company</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<div class="fixed bottom-5 right-5 z-50 h-14 w-14">
+  <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-75 animate-ping"></span>
+  <a href="https://wa.me/5511965937180?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp"
+    class="relative inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105">
+    <svg viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7"><path d="M12.001 2c-5.523 0-10 4.477-10 10 0 1.77.464 3.484 1.34 4.988L2 22l5.144-1.351A9.958 9.958 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12.001 2zm0 18.09a8.05 8.05 0 0 1-4.108-1.13l-.294-.174-3.055.802.815-2.978-.192-.306A8.05 8.05 0 0 1 3.91 12c0-4.464 3.626-8.09 8.09-8.09 4.464 0 8.09 3.626 8.09 8.09 0 4.464-3.626 8.09-8.09 8.09z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+  </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
