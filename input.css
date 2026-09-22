@@ -72,6 +72,15 @@ html {
   animation: form-shine 7s ease-in-out infinite;
 }
 
+/* Brief confirmation shown after the contact form is submitted */
+.form-status {
+  transition: opacity 0.3s ease;
+}
+
+.form-status.is-visible {
+  opacity: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .form-shine {
     animation: none;

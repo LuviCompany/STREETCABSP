@@ -62,6 +62,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var whatsappNumber = "5511965937180";
   var form = document.getElementById("contact-form");
+  var formStatus = document.getElementById("form-status");
+  var formStatusTimer = null;
+
+  function showFormStatus() {
+    if (!formStatus) return;
+    formStatus.classList.add("is-visible");
+    clearTimeout(formStatusTimer);
+    formStatusTimer = setTimeout(function () {
+      formStatus.classList.remove("is-visible");
+    }, 6000);
+  }
 
   if (form) {
     form.addEventListener("submit", function (e) {
@@ -107,6 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
           keepalive: true,
         }).catch(function () {});
       } catch (err) {}
+
+      showFormStatus();
 
       // Opened synchronously in the click handler so popup blockers allow it.
       window.open(url, "_blank", "noopener,noreferrer");
