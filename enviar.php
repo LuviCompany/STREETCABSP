@@ -19,13 +19,22 @@ const DESTINO = 'contato@streetcab.com.br';
 const NOME_REMETENTE = 'Site Streetcab';
 const INTERVALO_SEGUNDOS = 20; // limite simples por IP
 
+// Diagnóstico temporário: com este valor exato no campo POST "debug", a
+// resposta inclui o motivo real da falha. Remover assim que o envio de
+// e-mail estiver funcionando — não é para ficar em produção.
+const DEBUG_KEY = '3ef707c5c65441731aa63504e70f691a1aca9443ad161cd8';
+
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 
-function responder(int $status, bool $ok): void
+function responder(int $status, bool $ok, ?string $detalhe = null): void
 {
+    $payload = ['ok' => $ok];
+    if ($detalhe !== null && ($_POST['debug'] ?? '') === DEBUG_KEY) {
+        $payload['detalhe'] = $detalhe;
+    }
     http_response_code($status);
-    echo json_encode(['ok' => $ok]);
+    echo json_encode($payload);
     exit;
 }
 
@@ -81,8 +90,9 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 // Ver smtp-config.example.php para o modelo — esse arquivo não existe no Git.
 $configPath = __DIR__ . '/smtp-config.php';
 if (!is_file($configPath)) {
-    error_log('enviar.php: smtp-config.php não encontrado — copie smtp-config.example.php e preencha a senha.');
-    responder(500, false);
+    $motivo = 'smtp-config.php não encontrado em ' . $configPath;
+    error_log('enviar.php: ' . $motivo);
+    responder(500, false, $motivo);
 }
 require $configPath;
 
@@ -129,5 +139,5 @@ try {
     responder(200, true);
 } catch (PHPMailerException $e) {
     error_log('enviar.php: falha ao enviar e-mail — ' . $mail->ErrorInfo);
-    responder(500, false);
+    responder(500, false, $mail->ErrorInfo);
 }
