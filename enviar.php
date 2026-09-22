@@ -3,10 +3,20 @@
  * Recebe o formulário de contato e envia por e-mail para a Streetcab.
  * O WhatsApp continua sendo o canal principal: o front-end abre o WhatsApp
  * independentemente do resultado deste script.
+ *
+ * Usa SMTP autenticado (via PHPMailer) em vez da função mail() do PHP:
+ * em hospedagens como a Hostinger, mail() costuma "funcionar" (retorna
+ * sucesso) mas a mensagem não chega às caixas de e-mail da própria conta,
+ * porque o envio local não é autenticado no servidor de e-mail. As
+ * credenciais reais ficam em smtp-config.php (fora do Git — veja
+ * smtp-config.example.php).
  */
 
+use PHPMailer\PHPMailer\Exception as PHPMailerException;
+use PHPMailer\PHPMailer\PHPMailer;
+
 const DESTINO = 'contato@streetcab.com.br';
-const REMETENTE = 'contato@streetcab.com.br'; // precisa ser do domínio para não cair no spam
+const NOME_REMETENTE = 'Site Streetcab';
 const INTERVALO_SEGUNDOS = 20; // limite simples por IP
 
 header('Content-Type: application/json; charset=utf-8');
@@ -67,10 +77,22 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     responder(422, false);
 }
 
+// Credenciais reais (SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_USER, SMTP_PASS).
+// Ver smtp-config.example.php para o modelo — esse arquivo não existe no Git.
+$configPath = __DIR__ . '/smtp-config.php';
+if (!is_file($configPath)) {
+    error_log('enviar.php: smtp-config.php não encontrado — copie smtp-config.example.php e preencha a senha.');
+    responder(500, false);
+}
+require $configPath;
+
+require __DIR__ . '/vendor/phpmailer/src/Exception.php';
+require __DIR__ . '/vendor/phpmailer/src/PHPMailer.php';
+require __DIR__ . '/vendor/phpmailer/src/SMTP.php';
+
 date_default_timezone_set('America/Sao_Paulo');
 
 $assunto = 'Novo pedido de orçamento - ' . $nome . ' (' . $empresa . ')';
-$assuntoCodificado = '=?UTF-8?B?' . base64_encode($assunto) . '?=';
 
 $corpo = "Novo pedido de orçamento enviado pelo site.\n\n"
     . "Nome: $nome\n"
@@ -81,21 +103,31 @@ $corpo = "Novo pedido de orçamento enviado pelo site.\n\n"
     . "--\n"
     . 'Enviado em ' . date('d/m/Y H:i') . " (IP $ip)\n";
 
-$de = '=?UTF-8?B?' . base64_encode('Site Streetcab') . '?=';
-$cabecalhos = implode("\r\n", [
-    'From: ' . $de . ' <' . REMETENTE . '>',
-    'Reply-To: ' . $email, // já validado: não contém quebras de linha
-    'MIME-Version: 1.0',
-    'Content-Type: text/plain; charset=UTF-8',
-    'Content-Transfer-Encoding: 8bit',
-    'X-Mailer: PHP/' . PHP_VERSION,
-]);
+$mail = new PHPMailer(true);
 
-$enviado = mail(DESTINO, $assuntoCodificado, $corpo, $cabecalhos, '-f' . REMETENTE);
+try {
+    $mail->isSMTP();
+    $mail->Host = SMTP_HOST;
+    $mail->Port = SMTP_PORT;
+    $mail->SMTPSecure = SMTP_SECURE;
+    $mail->SMTPAuth = true;
+    $mail->Username = SMTP_USER;
+    $mail->Password = SMTP_PASS;
+    $mail->CharSet = 'UTF-8';
 
-if ($enviado) {
+    $mail->setFrom(SMTP_USER, NOME_REMETENTE);
+    $mail->addAddress(DESTINO);
+    $mail->addReplyTo($email, $nome);
+
+    $mail->isHTML(false);
+    $mail->Subject = $assunto;
+    $mail->Body = $corpo;
+
+    $mail->send();
+
     @touch($arquivoLimite);
     responder(200, true);
+} catch (PHPMailerException $e) {
+    error_log('enviar.php: falha ao enviar e-mail — ' . $mail->ErrorInfo);
+    responder(500, false);
 }
-
-responder(500, false);

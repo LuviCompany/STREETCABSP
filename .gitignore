@@ -2,3 +2,7 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
+
+# Real SMTP credentials for enviar.php — never commit (repo is public).
+# Copy smtp-config.example.php to smtp-config.php on the server and fill it in.
+smtp-config.php

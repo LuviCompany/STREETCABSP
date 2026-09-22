@@ -16,7 +16,9 @@ css/styles.css       CSS compilado do Tailwind (gerado — não editar direto)
 input.css            fonte do Tailwind (editar aqui, depois recompilar)
 tailwind.config.js   tokens de cor/fonte do projeto
 js/main.js           menu mobile, formulário → WhatsApp (+ e-mail via enviar.php), scroll-reveal, contador animado
-enviar.php           recebe o formulário e envia e-mail para contato@streetcab.com.br (só roda na Hostinger/PHP)
+enviar.php           recebe o formulário e envia e-mail para contato@streetcab.com.br via SMTP (só roda na Hostinger/PHP)
+smtp-config.example.php   modelo das credenciais SMTP — copiar para smtp-config.php no servidor (nunca commitar o real)
+vendor/phpmailer/    PHPMailer vendorizado manualmente (sem Composer) — só as 3 fontes em src/
 images/, logos/, videos/   assets do site
 ```
 
@@ -60,7 +62,8 @@ O `tailwind.config.js` aponta `content` para `./index.html` — se novos arquivo
 ## Deploy
 
 - **Hospedagem oficial: Hostinger** (`public_html`). A Vercel foi só o ambiente de testes/preview. O `enviar.php` só executa em servidor com PHP — na Vercel o formulário segue funcionando pelo WhatsApp, mas sem o e-mail.
-- **Formulário → e-mail:** `js/main.js` faz `POST` para `enviar.php` (fire-and-forget, com honeypot `website`) e abre o WhatsApp em seguida; o WhatsApp continua sendo o canal principal e abre mesmo se o e-mail falhar. Destino/remetente ficam nas constantes no topo do `enviar.php` (o remetente precisa ser do domínio para não cair no spam). Não dá para testar o envio localmente (sem PHP) — validar no site da Hostinger.
+- **Formulário → e-mail:** `js/main.js` faz `POST` para `enviar.php` (fire-and-forget, com honeypot `website`) e abre o WhatsApp em seguida; o WhatsApp continua sendo o canal principal e abre mesmo se o e-mail falhar. Não dá para testar o envio localmente (sem PHP) — validar no site da Hostinger.
+- **enviar.php usa SMTP autenticado (PHPMailer), não a função `mail()` do PHP.** Em contas Hostinger, `mail()` retorna sucesso mas a mensagem não chega às caixas da própria conta (testado e confirmado: nenhum e-mail chegou). PHPMailer está vendorizado em `vendor/phpmailer/src/` (sem Composer — só as 3 fontes exigidas direto). As credenciais reais (host/porta/usuário/senha da caixa `contato@streetcab.com.br`) ficam em `smtp-config.php`, **fora do Git** (`.gitignore`), porque o repositório é público. `smtp-config.example.php` é o modelo commitado — copiar para `smtp-config.php` direto no Gerenciador de Arquivos da Hostinger e preencher a senha lá. Se esse arquivo não existir no servidor, `enviar.php` responde erro (e ainda assim o WhatsApp abre normalmente).
 
 - Repositório: [github.com/LuviCompany/STREETCABSP](https://github.com/LuviCompany/STREETCABSP) (renomeado de `STREETCAB`; o remote local já aponta para o novo nome)
 - Hospedagem: Vercel, projeto estático (sem framework preset, sem build command)
